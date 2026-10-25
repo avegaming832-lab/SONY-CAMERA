@@ -3,70 +3,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#090a0d">
-<title>SONY A7 V | PRO CAMERA</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08090c">
+<title>SONY α7 V | PRO CAMERA</title>
 <style>
 *{box-sizing:border-box}
-:root{--bg:#090a0d;--panel:#15171c;--line:#30333b;--red:#e51d35;--text:#f7f7f8}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}
-button,input,select{font:inherit}
-button{cursor:pointer;color:white;border:1px solid var(--line);background:#20232a;border-radius:12px;padding:12px}
+:root{--bg:#08090c;--panel:#14161b;--line:#30333c;--red:#e51d35}
+body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif}
+button,select,input{font:inherit}
+button{cursor:pointer;color:white;background:#22252c;border:1px solid var(--line);border-radius:12px;padding:12px}
 button:active{transform:scale(.97)}
-.app{max-width:650px;margin:auto;min-height:100dvh;padding:15px;padding-bottom:28px}
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}
-.brand{font-size:19px;font-weight:900;letter-spacing:1px}
+.app{width:min(100%,680px);margin:auto;padding:16px;padding-bottom:35px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.brand{font-size:21px;font-weight:900;letter-spacing:2px}
 .brand span{color:var(--red)}
-.sub{font-size:10px;color:#969ba7;letter-spacing:3px;margin-top:5px}
-.live{font-size:11px;color:#ff4356;display:flex;align-items:center;gap:6px}
-.dot{width:7px;height:7px;background:#ff334b;border-radius:50%}
-.screen{position:relative;background:#000;aspect-ratio:4/3;border-radius:18px;overflow:hidden;border:1px solid #333}
-video{width:100%;height:100%;object-fit:cover;display:block}
-video.filter-vivid{filter:saturate(1.35) contrast(1.08)}
-video.filter-mono{filter:grayscale(1)}
-video.filter-warm{filter:sepia(.28) saturate(1.2)}
-video.filter-cool{filter:saturate(.8) hue-rotate(12deg)}
-video.filter-hdr{filter:contrast(1.18) saturate(1.12) brightness(1.04)}
-.hud{position:absolute;inset:0;pointer-events:none;padding:12px;display:flex;flex-direction:column;justify-content:space-between}
-.hudtop,.hudbottom{display:flex;justify-content:space-between;align-items:center;font-size:10px;text-shadow:0 1px 4px #000}
-.rec{color:#ff4356}
-.focusbox{position:absolute;left:50%;top:50%;width:55px;height:55px;transform:translate(-50%,-50%);border:1px solid #a8f2a4;pointer-events:none}
-.focusbox:before,.focusbox:after{content:"";position:absolute;background:#a8f2a4}
-.focusbox:before{width:1px;height:12px;left:50%;top:-6px}
-.focusbox:after{height:1px;width:12px;top:50%;left:-6px}
-#focusMsg{position:absolute;left:50%;top:calc(50% + 38px);transform:translateX(-50%);font-size:10px;color:#b7ffae;text-shadow:0 1px 4px black}
-#cameraMessage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;background:#090a0d;color:#ddd;font-size:14px;line-height:1.7}
+.sub,.label{font-size:10px;letter-spacing:2px;color:#9298a5;margin-top:5px}
+.live{font-size:10px;color:#ff4056}
+.screen{position:relative;background:#000;border:1px solid #333;border-radius:17px;overflow:hidden;aspect-ratio:4/3}
+#video{width:100%;height:100%;display:block;object-fit:cover}
+.hud{position:absolute;inset:0;padding:12px;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between;text-shadow:0 1px 5px #000;font-size:11px}
+.hudrow{display:flex;justify-content:space-between}
+#rec{color:#ff4358}
+#focusBox{position:absolute;width:55px;height:55px;border:1px solid #a9ffa4;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+#focusMsg{position:absolute;top:calc(50% + 35px);left:50%;transform:translateX(-50%);font-size:10px;color:#b9ffb2;text-shadow:0 1px 5px #000;pointer-events:none;white-space:nowrap}
+#cameraMessage{position:absolute;inset:0;background:#08090c;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-size:14px;line-height:1.8}
 .hidden{display:none!important}
-.status{display:flex;justify-content:space-between;align-items:center;padding:14px 2px;font-size:11px;color:#a6aab3}
+.status{display:flex;justify-content:space-between;gap:5px;padding:13px 2px;font-size:10px;color:#9ba0ab}
 .status strong{color:#fff}
-.section{background:var(--panel);border:1px solid #252830;border-radius:16px;padding:15px;margin-bottom:12px}
-.label{font-size:10px;letter-spacing:2px;color:#9297a3;margin-bottom:12px;font-weight:bold}
-.row{display:flex;align-items:center;gap:9px}
+.section{background:var(--panel);border:1px solid #252830;border-radius:15px;padding:15px;margin-bottom:12px}
+.label{margin:0 0 13px;font-weight:bold}
+.row{display:flex;gap:9px}
 .row>*{flex:1;min-width:0}
-.controls{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.control{display:flex;flex-direction:column;gap:8px}
-.control label{font-size:11px;color:#b5b8c1}
-select{width:100%;background:#20232a;color:white;border:1px solid var(--line);border-radius:10px;padding:11px}
-input[type=range]{width:100%;accent-color:var(--red)}
-.small{font-size:11px;color:#999eaa}
-.action{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
-.shutter{width:76px;height:76px;border-radius:50%;padding:5px;background:white;border:4px solid #8a8c94;flex:none}
-.shutter span{display:block;width:100%;height:100%;background:var(--red);border-radius:50%;border:3px solid white}
-.main-actions{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.sidebtn{flex:1;min-height:48px;font-size:12px}
 .primary{background:var(--red);border-color:var(--red);font-weight:bold}
-.shot-info{text-align:center;color:#9297a3;font-size:10px;margin-top:12px}
-#preview{width:100%;border-radius:12px;display:block;background:#000}
-#previewWrap{margin-top:12px}
-.photo-actions{display:flex;gap:10px;margin-top:10px}
-.photo-actions>*{flex:1}
-#gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.thumb{background:#090a0d;border-radius:9px;overflow:hidden;min-width:0}
+.note{font-size:11px;line-height:1.6;color:#a1a6b1}
+.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}
+.control{min-width:0}
+.control label{display:flex;justify-content:space-between;gap:5px;font-size:11px;color:#c1c4cc;margin-bottom:9px}
+input[type=range]{width:100%;accent-color:var(--red)}
+select{width:100%;background:#22252c;color:white;border:1px solid var(--line);border-radius:10px;padding:11px}
+.main-actions{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sidebtn{flex:1;font-size:11px;min-height:46px}
+.shutter{width:78px;height:78px;padding:5px;border-radius:50%;background:white;border:4px solid #9699a0;flex:none}
+.shutter span{display:block;width:100%;height:100%;border-radius:50%;background:var(--red);border:3px solid white}
+.center{text-align:center}
+#preview{display:block;width:100%;height:auto;border-radius:12px;background:#000}
+.photo-actions{display:flex;gap:9px;margin-top:10px}
+.photo-actions button{flex:1}
+#gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.thumb{overflow:hidden;border-radius:9px;background:#090a0d}
 .thumb img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
-.thumb button{width:100%;border-radius:0;padding:8px;font-size:10px}
-.note{font-size:11px;color:#a3a7b1;line-height:1.6}
-footer{text-align:center;color:#626772;font-size:10px;padding:15px}
+.thumb button{width:100%;border-radius:0;padding:9px;font-size:10px}
+footer{text-align:center;color:#696e78;font-size:10px;line-height:1.8;padding:15px}
 </style>
 </head>
 <body>
@@ -76,41 +63,42 @@ footer{text-align:center;color:#626772;font-size:10px;padding:15px}
   <div class="brand">SONY <span>α</span> 7 V</div>
   <div class="sub">PRO CAMERA SYSTEM</div>
  </div>
- <div class="live"><span class="dot"></span> LIVE VIEW</div>
+ <div class="live">● LIVE VIEW</div>
 </header>
 
 <div class="screen" id="screen">
  <video id="video" autoplay playsinline muted></video>
- <div id="cameraMessage">CAMERA STANDBY<br>Press START CAMERA to begin</div>
+ <div id="cameraMessage">CAMERA STANDBY<br>Press START CAMERA</div>
  <div class="hud">
-  <div class="hudtop"><span class="rec">● REC READY</span><span>AF-S　▣</span></div>
-  <div class="hudbottom"><span id="hudZoom">1.0×</span><span id="hudFlash">FLASH —</span><span>4:3</span></div>
+  <div class="hudrow"><span id="rec">● REC READY</span><span>AF / PHOTO</span></div>
+  <div class="hudrow"><span id="hudZoom">1.0×</span><span id="hudFlash">TORCH OFF</span><span>4:3</span></div>
  </div>
- <div class="focusbox"></div>
+ <div id="focusBox"></div>
  <div id="focusMsg">FOCUS AREA</div>
 </div>
 
 <div class="status">
- <span>MODE <strong>PHOTO / AUTO</strong></span>
- <span>QUALITY <strong>MAX AVAILABLE</strong></span>
- <span id="battery">BROWSER CAMERA</span>
+ <span>MODE <strong>AUTO</strong></span>
+ <span>ZOOM <strong id="zoomStatus">1×</strong></span>
+ <span>PHOTO <strong>JPEG</strong></span>
 </div>
 
 <div class="section">
- <div class="label">CAMERA CONTROLS</div>
+ <div class="label">CAMERA</div>
  <div class="row">
   <button class="primary" id="startBtn">START CAMERA</button>
   <button id="switchBtn">↻ FLIP CAMERA</button>
  </div>
- <p class="note" id="camStatus">Camera permission is required. Open this site using HTTPS.</p>
+ <p class="note" id="camStatus">HTTPS website par camera permission allow karein.</p>
 </div>
 
 <div class="section">
- <div class="label">ZOOM & FOCUS</div>
+ <div class="label">100× ZOOM & EXPOSURE</div>
  <div class="controls">
-  <div class="control">
-   <label>Zoom <strong id="zoomText">1.0×</strong></label>
-   <input id="zoom" type="range" min="1" max="4" value="1" step=".1">
+  <div class="control" style="grid-column:1/-1">
+   <label>Digital / Hardware Zoom <strong id="zoomText">1.0×</strong></label>
+   <input id="zoom" type="range" min="1" max="100" value="1" step="0.5">
+   <p class="note">100× zoom digital enlargement ho sakta hai. Actual detail phone ke camera par depend karti hai.</p>
   </div>
   <div class="control">
    <label>Exposure <strong id="exposureText">0</strong></label>
@@ -119,12 +107,11 @@ footer{text-align:center;color:#626772;font-size:10px;padding:15px}
   <div class="control">
    <label>Focus mode</label>
    <select id="focus">
-    <option value="auto">Auto</option>
-    <option value="manual">Tap focus</option>
+    <option value="auto">Auto focus</option>
+    <option value="tap">Tap focus indicator</option>
    </select>
   </div>
  </div>
- <p class="note">Zoom, exposure aur focus ki actual capability phone aur browser par depend karti hai.</p>
 </div>
 
 <div class="section">
@@ -134,50 +121,55 @@ footer{text-align:center;color:#626772;font-size:10px;padding:15px}
    <label>Color filter</label>
    <select id="filter">
     <option value="normal">Standard</option>
-    <option value="filter-vivid">Vivid</option>
-    <option value="filter-warm">Warm</option>
-    <option value="filter-cool">Cool</option>
-    <option value="filter-mono">Monochrome</option>
-    <option value="filter-hdr">HDR Style</option>
+    <option value="vivid">Vivid</option>
+    <option value="warm">Warm</option>
+    <option value="cool">Cool</option>
+    <option value="mono">Monochrome</option>
+    <option value="hdr">HDR style</option>
    </select>
   </div>
   <div class="control">
    <label>Flash / Torch</label>
-   <button id="flashBtn">⚡ FLASH OFF</button>
+   <button id="flashBtn">⚡ TORCH OFF</button>
   </div>
   <div class="control">
-   <label>HDR style</label>
+   <label>HDR-style effect</label>
    <button id="hdrBtn">HDR OFF</button>
+  </div>
+  <div class="control">
+   <label>Self timer</label>
+   <button id="timerBtn">TIMER OFF</button>
   </div>
  </div>
 </div>
 
 <div class="section">
- <div class="label">CAPTURE</div>
+ <div class="label">CAPTURE PHOTO</div>
  <div class="main-actions">
-  <button class="sidebtn" id="timerBtn">TIMER OFF</button>
+  <button class="sidebtn" id="resetBtn">RESET ZOOM</button>
   <button class="shutter" id="captureBtn" aria-label="Take photo"><span></span></button>
   <button class="sidebtn" id="flipBtn">FLIP ↻</button>
  </div>
- <div class="shot-info">TAP SHUTTER TO CAPTURE</div>
+ <p class="center note">Press the shutter to take a photo</p>
+
  <div id="previewWrap" class="hidden">
-  <div class="label" style="margin-top:16px">LATEST CAPTURE</div>
-  <img id="preview" alt="Your captured photo">
+  <div class="label" style="margin-top:15px">LATEST PHOTO</div>
+  <img id="preview" alt="Captured photo">
   <div class="photo-actions">
    <button class="primary" id="saveBtn">↓ SAVE PHOTO</button>
    <button id="retakeBtn">RETAKE</button>
   </div>
-  <p class="note">Save Photo par tap karein. iPhone par image khulne ke baad Share → Save Image use karna par sakta hai.</p>
+  <p class="note">iPhone par Share → Save Image karna par sakta hai. Android par downloaded image ko Gallery mein check karein.</p>
  </div>
 </div>
 
 <div class="section">
- <div class="label">LOCAL SESSION PHOTOS</div>
+ <div class="label">SESSION PHOTOS</div>
  <div id="gallery"></div>
- <p class="note">Yahan sirf is session ki photos dikhti hain. Page refresh ya close karne par ye thumbnails clear ho sakti hain. Saved photos ko device Gallery/Photos mein check karein.</p>
+ <p class="note">Session thumbnails temporary hain. Photos ko device par save karne ke liye har photo ka SAVE button use karein.</p>
 </div>
 
-<footer>SONY α STYLE • MOBILE CAMERA EXPERIENCE<br>Independent demo — not an official Sony product</footer>
+<footer>SONY α STYLE CAMERA EXPERIENCE<br>Independent demo • Not an official Sony product</footer>
 </div>
 
 <canvas id="canvas" hidden></canvas>
@@ -187,17 +179,19 @@ const $ = id => document.getElementById(id);
 const video = $("video");
 const canvas = $("canvas");
 const ctx = canvas.getContext("2d");
+
 let stream = null;
-let facing = "environment";
 let track = null;
 let capabilities = {};
-let lastBlob = null;
-let lastUrl = null;
-let photos = [];
+let facing = "environment";
 let flash = false;
 let hdr = false;
 let timer = false;
 let busy = false;
+let lastBlob = null;
+let lastUrl = null;
+let photos = [];
+let cameraZoomMax = 1;
 
 function say(message) {
   $("camStatus").textContent = message;
@@ -208,14 +202,20 @@ function stopCamera() {
   stream = null;
   track = null;
   video.srcObject = null;
+  capabilities = {};
+  flash = false;
+  $("flashBtn").textContent = "⚡ TORCH OFF";
+  $("hudFlash").textContent = "TORCH OFF";
 }
 
 async function startCamera() {
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-    say("Camera unavailable. Use an updated browser and HTTPS.");
+    say("Camera needs HTTPS and a supported browser.");
     return;
   }
+
   stopCamera();
+
   try {
     stream = await navigator.mediaDevices.getUserMedia({
       audio: false,
@@ -225,32 +225,43 @@ async function startCamera() {
         height: { ideal: 1080 }
       }
     });
+
     video.srcObject = stream;
     await video.play();
+
     track = stream.getVideoTracks()[0];
     capabilities = track.getCapabilities ? track.getCapabilities() : {};
+    cameraZoomMax = capabilities.zoom ? capabilities.zoom.max : 1;
+
     $("cameraMessage").classList.add("hidden");
-    say("Camera ready • " + (track.label || "Mobile camera"));
     $("startBtn").textContent = "RESTART CAMERA";
+    say("Camera ready • " + (track.label || "Mobile camera"));
+
     if (capabilities.zoom) {
-      $("zoom").min = capabilities.zoom.min;
-      $("zoom").max = Math.min(4, capabilities.zoom.max);
-      $("zoom").step = capabilities.zoom.step || .1;
+      $("zoom").min = Math.max(1, capabilities.zoom.min);
+    } else {
+      $("zoom").min = 1;
     }
-    updateZoom();
+
+    $("zoom").max = 100;
+    $("zoom").step = .5;
+    await updateZoom();
+    await updateExposure();
+
   } catch (e) {
-    say("Camera could not start: " + e.message +
-      ". Allow camera permission and use HTTPS.");
     $("cameraMessage").classList.remove("hidden");
-    $("cameraMessage").textContent =
-      "CAMERA ACCESS DENIED OR UNAVAILABLE\nAllow camera permission and try again.";
+    $("cameraMessage").innerHTML =
+      "CAMERA UNAVAILABLE<br>Allow camera permission and use HTTPS.";
+    say("Camera error: " + e.message);
   }
 }
 
 async function applySetting(key, value) {
   if (!track || !track.applyConstraints) return false;
   try {
-    await track.applyConstraints({ advanced: [{ [key]: value }] });
+    await track.applyConstraints({
+      advanced: [{ [key]: value }]
+    });
     return true;
   } catch (_) {
     return false;
@@ -261,85 +272,95 @@ async function updateZoom() {
   const z = Number($("zoom").value);
   $("zoomText").textContent = z.toFixed(1) + "×";
   $("hudZoom").textContent = z.toFixed(1) + "×";
+  $("zoomStatus").textContent = z.toFixed(1) + "×";
+
   if (capabilities.zoom) {
-    await applySetting("zoom", z);
-    video.style.transform = "scale(1)";
+    const hardwareZoom = Math.min(z, cameraZoomMax);
+    await applySetting("zoom", hardwareZoom);
+    video.style.transform = z > cameraZoomMax
+      ? `scale(${z / cameraZoomMax})`
+      : "scale(1)";
   } else {
     video.style.transform = `scale(${z})`;
   }
+
+  video.style.transformOrigin = "center center";
 }
 
 $("zoom").addEventListener("input", updateZoom);
 
-$("exposure").addEventListener("input", async () => {
-  const val = Number($("exposure").value);
-  $("exposureText").textContent = val > 0 ? "+" + val : val;
+async function updateExposure() {
+  const value = Number($("exposure").value);
+  $("exposureText").textContent = value > 0 ? "+" + value : value;
+
   if (capabilities.exposureCompensation) {
-    await applySetting("exposureCompensation", val);
-  } else {
-    video.style.filter = `brightness(${1 + val * .12})`;
-  }
-});
-
-$("filter").addEventListener("change", () => {
-  video.classList.remove("filter-vivid","filter-mono","filter-warm","filter-cool","filter-hdr");
-  const value = $("filter").value;
-  if (value !== "normal") video.classList.add(value);
-});
-
-$("focus").addEventListener("change", async () => {
-  const mode = $("focus").value;
-  if (capabilities.focusMode && capabilities.focusMode.includes(mode)) {
-    await applySetting("focusMode", mode);
-    say("Focus mode: " + mode);
-  } else {
-    say("Tap the preview to mark a focus point. Actual focus depends on device support.");
-  }
-});
-
-$("screen").addEventListener("click", async e => {
-  if (e.target.closest("button") || e.target === $("cameraMessage")) return;
-  const rect = video.getBoundingClientRect();
-  const x = (e.clientX - rect.left) / rect.width;
-  const y = (e.clientY - rect.top) / rect.height;
-  $("focusMsg").textContent = "FOCUS " + Math.round(x*100) + "% / " + Math.round(y*100) + "%";
-  if (capabilities.focusMode && capabilities.focusMode.includes("single-shot")) {
-    await applySetting("focusMode", "single-shot");
-  }
-});
-
-async function toggleFlash() {
-  if (!track) {
-    say("Start the camera first.");
-    return;
-  }
-  if (!capabilities.torch) {
-    say("Torch is not supported by this camera/browser.");
-    return;
-  }
-  flash = !flash;
-  try {
-    await track.applyConstraints({ advanced: [{ torch: flash }] });
-    $("flashBtn").textContent = flash ? "⚡ FLASH ON" : "⚡ FLASH OFF";
-    $("hudFlash").textContent = flash ? "TORCH ON" : "FLASH OFF";
-  } catch (_) {
-    flash = !flash;
-    say("Torch could not be enabled.");
+    await applySetting("exposureCompensation", value);
   }
 }
 
-$("flashBtn").addEventListener("click", toggleFlash);
+$("exposure").addEventListener("input", updateExposure);
+
+function getFilterCSS() {
+  const filters = {
+    normal: "none",
+    vivid: "saturate(1.4) contrast(1.1)",
+    warm: "sepia(.25) saturate(1.2)",
+    cool: "saturate(.85) hue-rotate(12deg)",
+    mono: "grayscale(1)",
+    hdr: "contrast(1.2) saturate(1.15) brightness(1.04)"
+  };
+  return filters[$("filter").value] || "none";
+}
+
+$("filter").addEventListener("change", () => {
+  video.style.filter = getFilterCSS();
+});
 
 $("hdrBtn").addEventListener("click", () => {
   hdr = !hdr;
   $("hdrBtn").textContent = hdr ? "HDR STYLE ON" : "HDR OFF";
-  $("filter").value = hdr ? "filter-hdr" : "normal";
-  $("filter").dispatchEvent(new Event("change"));
+  $("filter").value = hdr ? "hdr" : "normal";
+  video.style.filter = getFilterCSS();
 });
 
-$("timerBtn").addEventListener("click", () => {
-  timer = !timer;
-  $("timerBtn").textContent = timer ? "TIMER 3 SEC" : "TIMER OFF";
+$("flashBtn").addEventListener("click", async () => {
+  if (!track) {
+    say("Start camera first.");
+    return;
+  }
+
+  if (!capabilities.torch) {
+    say("Torch not supported by this phone/browser camera.");
+    return;
+  }
+
+  try {
+    flash = !flash;
+    await track.applyConstraints({
+      advanced: [{ torch: flash }]
+    });
+    $("flashBtn").textContent = flash ? "⚡ TORCH ON" : "⚡ TORCH OFF";
+    $("hudFlash").textContent = flash ? "TORCH ON" : "TORCH OFF";
+  } catch (_) {
+    flash = false;
+    say("Could not enable torch.");
+  }
+});
+
+$("focus").addEventListener("change", () => {
+  say("Tap focus indicator selected. Actual focus control depends on device support.");
+});
+
+$("screen").addEventListener("click", e => {
+  if (e.target.closest("button") || e.target === $("cameraMessage")) return;
+
+  const rect = $("screen").getBoundingClientRect();
+  const x = Math.round((e.clientX - rect.left) / rect.width * 100);
+  const y = Math.round((e.clientY - rect.top) / rect.height * 100);
+
+  $("focusBox").style.left = x + "%";
+  $("focusBox").style.top = y + "%";
+  $("focusMsg").textContent = "FOCUS AREA " + x + "% / " + y + "%";
 });
 
 $("startBtn").addEventListener("click", startCamera);
@@ -351,57 +372,93 @@ async function flipCamera() {
   await startCamera();
 }
 
-function dataURLtoBlob(dataURL) {
-  const parts = dataURL.split(",");
-  const mime = parts[0].match(/:(.*?);/)[1];
-  const bytes = atob(parts[1]);
-  const arr = new Uint8Array(bytes.length);
-  for (let i = 0; i < bytes.length; i++) arr[i] = bytes.charCodeAt(i);
-  return new Blob([arr], {type:mime});
+$("resetBtn").addEventListener("click", () => {
+  $("zoom").value = 1;
+  updateZoom();
+});
+
+$("timerBtn").addEventListener("click", () => {
+  timer = !timer;
+  $("timerBtn").textContent = timer ? "TIMER 3 SEC" : "TIMER OFF";
+});
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function capture() {
+async function capturePhoto() {
   if (busy) return;
+
   if (!stream || !video.videoWidth) {
-    say("Start the camera before taking a photo.");
+    say("Start camera before taking a photo.");
     return;
   }
+
   busy = true;
   $("captureBtn").style.opacity = ".5";
+
   try {
     if (timer) {
-      for (let n = 3; n > 0; n--) {
-        $("focusMsg").textContent = "CAPTURING IN " + n;
-        await new Promise(resolve => setTimeout(resolve, 1000));
+      for (let i = 3; i >= 1; i--) {
+        $("focusMsg").textContent = "CAPTURE IN " + i;
+        await wait(1000);
       }
     }
+
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
+
     ctx.save();
-    const mirror = facing === "user";
-    if (mirror) {
+
+    if (facing === "user") {
       ctx.translate(canvas.width, 0);
       ctx.scale(-1, 1);
     }
-    ctx.filter = getComputedStyle(video).filter || "none";
-    const zoom = Number($("zoom").value);
-    const sw = canvas.width / zoom;
-    const sh = canvas.height / zoom;
-    ctx.drawImage(video,
-      (canvas.width - sw)/2, (canvas.height - sh)/2, sw, sh,
-      0, 0, canvas.width, canvas.height);
+
+    ctx.filter = getFilterCSS();
+
+    const z = Number($("zoom").value);
+    const sw = canvas.width / z;
+    const sh = canvas.height / z;
+
+    ctx.drawImage(
+      video,
+      (canvas.width - sw) / 2,
+      (canvas.height - sh) / 2,
+      sw,
+      sh,
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
     ctx.restore();
-    const blob = await new Promise(resolve => canvas.toBlob(resolve, "image/jpeg", .95));
-    if (!blob) throw new Error("Photo could not be created");
+
+    const blob = await new Promise(resolve =>
+      canvas.toBlob(resolve, "image/jpeg", 1.0)
+    );
+
+    if (!blob) throw new Error("Could not create photo.");
+
     lastBlob = blob;
-    if (lastUrl) URL.revokeObjectURL(lastUrl);
-    lastUrl = URL.createObjectURL(blob);
-    $("preview").src = lastUrl;
+
+    const url = URL.createObjectURL(blob);
+    lastUrl = url;
+
+    $("preview").src = url;
     $("previewWrap").classList.remove("hidden");
-    photos.unshift({blob, url:lastUrl, time:Date.now()});
+
+    photos.unshift({
+      blob: blob,
+      url: url,
+      time: Date.now()
+    });
+
     renderGallery();
     $("focusMsg").textContent = "PHOTO CAPTURED";
-    say("Photo captured • Press SAVE PHOTO to download.");
+    say("Photo ready. Press SAVE PHOTO to save it.");
+
   } catch (e) {
     say("Capture failed: " + e.message);
   } finally {
@@ -410,33 +467,46 @@ async function capture() {
   }
 }
 
-$("captureBtn").addEventListener("click", capture);
+$("captureBtn").addEventListener("click", capturePhoto);
 
-function saveBlob(blob, filename) {
+function downloadPhoto(blob, filename) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
+
   a.href = url;
   a.download = filename;
+  a.style.display = "none";
+
   document.body.appendChild(a);
   a.click();
   a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 30000);
+
+  setTimeout(() => URL.revokeObjectURL(url), 60000);
 }
 
-$("saveBtn").addEventListener("click", async () => {
-  if (!lastBlob) return;
-  const file = new File([lastBlob], "SONY_A7V_" + Date.now() + ".jpg",
-    {type:"image/jpeg"});
-  if (navigator.canShare && navigator.canShare({files:[file]})) {
+async function savePhoto(blob, filename) {
+  if (!blob) return;
+
+  const file = new File([blob], filename, { type: "image/jpeg" });
+
+  if (navigator.canShare && navigator.canShare({ files: [file] })) {
     try {
-      await navigator.share({files:[file], title:"SONY A7 V Photo"});
+      await navigator.share({
+        files: [file],
+        title: "SONY A7 V Photo"
+      });
       return;
     } catch (e) {
       if (e.name === "AbortError") return;
     }
   }
-  saveBlob(lastBlob, file.name);
-  say("Photo download requested. Check Downloads or save the image to Photos/Gallery.");
+
+  downloadPhoto(blob, filename);
+  say("Download requested. Check Downloads or save to Photos/Gallery.");
+}
+
+$("saveBtn").addEventListener("click", () => {
+  savePhoto(lastBlob, "SONY_A7V_" + Date.now() + ".jpg");
 });
 
 $("retakeBtn").addEventListener("click", () => {
@@ -447,16 +517,21 @@ $("retakeBtn").addEventListener("click", () => {
 function renderGallery() {
   const gallery = $("gallery");
   gallery.replaceChildren();
-  photos.slice(0, 9).forEach((photo, i) => {
+
+  photos.slice(0, 9).forEach((photo, index) => {
     const box = document.createElement("div");
     box.className = "thumb";
+
     const img = document.createElement("img");
     img.src = photo.url;
-    img.alt = "Captured photo " + (i+1);
+    img.alt = "Captured photo " + (index + 1);
+
     const btn = document.createElement("button");
-    btn.textContent = "SAVE " + (i+1);
-    btn.addEventListener("click", () => saveBlob(
-      photo.blob, "SONY_A7V_" + photo.time + ".jpg"));
+    btn.textContent = "SAVE " + (index + 1);
+    btn.addEventListener("click", () => {
+      savePhoto(photo.blob, "SONY_A7V_" + photo.time + ".jpg");
+    });
+
     box.append(img, btn);
     gallery.appendChild(box);
   });
